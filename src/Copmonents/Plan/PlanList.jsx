@@ -23,12 +23,11 @@ const ServiceCard = () => {
       return newLiked
     })
   }
-
   useEffect(() => {
     const fetchServices = async () => {
       try {
         setLoading(true)
-        const response = await fetch('http://localhost:8080/api/services', {
+        const response = await fetch(`${import.meta.env.VITE_DEV_BACKEND_URL}/api/services`, {
           method: 'GET',
         })
         
